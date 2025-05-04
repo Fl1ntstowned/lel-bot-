@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection Overview</title>
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --background-color: #ecf0f1;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+      --border-radius: 12px;
+      --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3 {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+    
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      padding-bottom: 1rem;
+      border-bottom: 3px solid var(--primary-color);
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary-color);
+    }
+    
+    .section {
+      margin-bottom: 30px;
+      padding: 25px;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+    
+    .section:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+    }
+    
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+    
+    .stat-box {
+      flex: 1;
+      min-width: 250px;
+      border-radius: var(--border-radius);
+      padding: 15px;
+      background-color: rgba(236, 240, 241, 0.5);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+    }
+    
+    tr {
+      transition: var(--transition);
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(236, 240, 241, 0.5);
+    }
+    
+    tr:hover {
+      background-color: rgba(52, 152, 219, 0.1);
+    }
+    
+    td {
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .trait-image {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      margin-right: 10px;
+      border-radius: 4px;
+      background-color: #f8f9fa;
+      vertical-align: middle;
+    }
+    
+    .trait-name {
+      display: flex;
+      align-items: center;
+    }
+    
+    .rarity-common { color: #3498db; font-weight: 600; }
+    .rarity-uncommon { color: #2ecc71; font-weight: 600; }
+    .rarity-rare { color: #9b59b6; font-weight: 600; }
+    .rarity-epic { color: #e74c3c; font-weight: 600; }
+    .rarity-legendary { color: #f39c12; font-weight: 600; }
+    
+    .stat-percentage {
+      font-weight: 600;
+    }
+    
+    .summary-box {
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: var(--border-radius);
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .summary-box h2 {
+      color: white;
+      margin-top: 0;
+    }
+    
+    .summary-stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .summary-stat {
+      padding: 15px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      min-width: 120px;
+    }
+    
+    .summary-stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    
+    .summary-stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    @media (max-width: 768px) {
+      .stats-container {
+        flex-direction: column;
+      }
+      
+      .stat-box {
+        min-width: 100%;
+      }
+      
+      .summary-stats {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Collection Rarity Overview</h1>
+  
+  <div class="summary-box">
+    <h2>Collection Summary</h2>
+    <div class="summary-stats">
+      <div class="summary-stat">
+        <div class="summary-stat-value">1234</div>
+        <div class="summary-stat-label">Total Items</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-value">25</div>
+        <div class="summary-stat-label">Backgrounds</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-value">41</div>
+        <div class="summary-stat-label">Bodies</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-value">43</div>
+        <div class="summary-stat-label">Heads</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-value">65</div>
+        <div class="summary-stat-label">Faces</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <div class="category-header">
+      <h2>Trait Distribution</h2>
+    </div>
+    <div class="stats-container">
+      <div class="stat-box">
+        <h3>Backgrounds</h3>
+        <table>
+          <tr><th>Image</th><th>Name</th><th>Count</th><th>Percentage</th></tr>
+          <tr>
+              <td><img src="https://ordinals.com/content/fee971b888a7ae38537a57cf5bc566bb8edd682f66c5f33f710079385bebbddbi0" class="trait-image" onerror="this.style.display='none'" alt="lime.png"></td>
+              <td>lime.png</td>
+              <td>59</td>
+              <td class="stat-percentage">4.78%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ccd7bfe340307d57b205e55aafdb23a6e36fb84dcfd3afbe67281ec36c991f1bi0" class="trait-image" onerror="this.style.display='none'" alt="orange.png"></td>
+              <td>orange.png</td>
+              <td>58</td>
+              <td class="stat-percentage">4.70%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/b38ffbc5f25d9104a94a1d85a7bc0e5bd3c541d232eae6c7f52acf4fb0a1ac7bi0" class="trait-image" onerror="this.style.display='none'" alt="classic Vert.png"></td>
+              <td>classic Vert.png</td>
+              <td>58</td>
+              <td class="stat-percentage">4.70%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/901846b042372aa482854e029d1715cfc633f14ac67d3461a8a66245baf9e56bi0" class="trait-image" onerror="this.style.display='none'" alt="pink.png"></td>
+              <td>pink.png</td>
+              <td>56</td>
+              <td class="stat-percentage">4.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/5a26f255a36d610c471294c71c6672260e83e97e3afbc6027cc0c40c53445962i0" class="trait-image" onerror="this.style.display='none'" alt="classic Bloo.png"></td>
+              <td>classic Bloo.png</td>
+              <td>55</td>
+              <td class="stat-percentage">4.46%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/951756698bd1f9217ac256f41aeeb172e10120704fda5cd2aa7fd1e4bc7fb9b9i0" class="trait-image" onerror="this.style.display='none'" alt="GReY apple.png"></td>
+              <td>GReY apple.png</td>
+              <td>55</td>
+              <td class="stat-percentage">4.46%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3680637001dcc9174a5dfcf2a00743e0df8e57dfbf80b48c0fb02e4346a019e4i0" class="trait-image" onerror="this.style.display='none'" alt="SKIN.png"></td>
+              <td>SKIN.png</td>
+              <td>53</td>
+              <td class="stat-percentage">4.29%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/1a1641d43e1863eecce1703c64063e9faefb2f2a12d7aa31d54772d3dfd62c14i0" class="trait-image" onerror="this.style.display='none'" alt="YELLOW.png"></td>
+              <td>YELLOW.png</td>
+              <td>53</td>
+              <td class="stat-percentage">4.29%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d99cb2a058e5b17eb1e395069d803a710dac259f31a4562deac81a28a6ce5ecfi0" class="trait-image" onerror="this.style.display='none'" alt="classic Rouje.png"></td>
+              <td>classic Rouje.png</td>
+              <td>53</td>
+              <td class="stat-percentage">4.29%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/2effe994034c8cf8de73a1210259c1862808647fc011e111fa8cc0656774ec1ai0" class="trait-image" onerror="this.style.display='none'" alt="LLM Cat"></td>
+              <td>LLM Cat</td>
+              <td>53</td>
+              <td class="stat-percentage">4.29%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ed6df0f70f0f8129101de01eadc9b68b290f3f3b2cfb4d18b8711b211a9ecc4ei0" class="trait-image" onerror="this.style.display='none'" alt="yellow (1).png"></td>
+              <td>yellow (1).png</td>
+              <td>50</td>
+              <td class="stat-percentage">4.05%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/b8b047fab6b1a08e5797b1cd5d0b8034634a33eaa84ed385424dc3785e2dc4d4i0" class="trait-image" onerror="this.style.display='none'" alt="BLaCK.png"></td>
+              <td>BLaCK.png</td>
+              <td>50</td>
+              <td class="stat-percentage">4.05%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/2c483ed7b57dc36791ebf06de5a41eec24cff7a4bf294ea7d97b3e082e5783a3i0" class="trait-image" onerror="this.style.display='none'" alt="SKY.png"></td>
+              <td>SKY.png</td>
+              <td>50</td>
+              <td class="stat-percentage">4.05%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/88b3dc564678a7472145e4c31f1f4504f5c8a6b29c1f51d6271155ae1d66a008i0" class="trait-image" onerror="this.style.display='none'" alt="GREY.png"></td>
+              <td>GREY.png</td>
+              <td>49</td>
+              <td class="stat-percentage">3.97%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/9ffdf7ee4e96fed3a06a4f39fab6b99efc6532bfa7c5f6232589e64f9e742611i0" class="trait-image" onerror="this.style.display='none'" alt="TENT.png"></td>
+              <td>TENT.png</td>
+              <td>47</td>
+              <td class="stat-percentage">3.81%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/f3a80ca34ef67abad66e7d4c1b45981477b7c08267de62f1d976031608f082ebi0" class="trait-image" onerror="this.style.display='none'" alt="Haunted Photography westbury House 2.png"></td>
+              <td>Haunted Photography westbury House 2.png</td>
+              <td>46</td>
+              <td class="stat-percentage">3.73%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/731de52aab636e990f5be9afc9c5ecd420c44143de220ab6d1143086f18868ebi0" class="trait-image" onerror="this.style.display='none'" alt="GReY cool.png"></td>
+              <td>GReY cool.png</td>
+              <td>46</td>
+              <td class="stat-percentage">3.73%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/30dfd488076001c72e340f6fe4d1026ce86b991c306b43b0352f83cddf99e1eci0" class="trait-image" onerror="this.style.display='none'" alt="navy.png"></td>
+              <td>navy.png</td>
+              <td>46</td>
+              <td class="stat-percentage">3.73%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/b5ea24c410fb957f5ebafdd103ef230e61f10dbce17f5fe190354bc2d2d07cbai0" class="trait-image" onerror="this.style.display='none'" alt="pink (1).png"></td>
+              <td>pink (1).png</td>
+              <td>44</td>
+              <td class="stat-percentage">3.57%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/c7c3ee99baa4c396200fc1c8934ee99ed4c03226bd383bd2803a1aa26021df79i0" class="trait-image" onerror="this.style.display='none'" alt="GLITCHWAVE"></td>
+              <td>GLITCHWAVE</td>
+              <td>44</td>
+              <td class="stat-percentage">3.57%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/212875d866714c9cc9a07e2288ebbc137fd90778b9d192947c01391443cfa185i0" class="trait-image" onerror="this.style.display='none'" alt="beige.png"></td>
+              <td>beige.png</td>
+              <td>44</td>
+              <td class="stat-percentage">3.57%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/67546de70b0ff415b8dcf5ed4af39078caed4086727026582c7ddfc4199abcabi0" class="trait-image" onerror="this.style.display='none'" alt="flowers.png"></td>
+              <td>flowers.png</td>
+              <td>44</td>
+              <td class="stat-percentage">3.57%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/542b66f4b08a9cd460bfc507bb3b5f355076c16c0a1b4fde71308b91402089b3i0" class="trait-image" onerror="this.style.display='none'" alt="PURPLE.png"></td>
+              <td>PURPLE.png</td>
+              <td>41</td>
+              <td class="stat-percentage">3.32%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3a2646b834c49a39d8995617b2d8c35e9132417470167bee227777bf321340b3i0" class="trait-image" onerror="this.style.display='none'" alt="on paper.png"></td>
+              <td>on paper.png</td>
+              <td>41</td>
+              <td class="stat-percentage">3.32%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d91f937d3d73cde10eb26d70a00c8f2b9ca637a708e6dfd06b3186765cdaedadi0" class="trait-image" onerror="this.style.display='none'" alt="fruite.png"></td>
+              <td>fruite.png</td>
+              <td>39</td>
+              <td class="stat-percentage">3.16%</td>
+            </tr>
+        </table>
+      </div>
+      
+      <div class="stat-box">
+        <h3>Bodies</h3>
+        <table>
+          <tr><th>Image</th><th>Name</th><th>Count</th><th>Percentage</th></tr>
+          <tr>
+              <td><img src="https://ordinals.com/content/73c9d75ee52a7421a8660f00ada9fb3688e7dce77b0d417a4a59300067184e34i0" class="trait-image" onerror="this.style.display='none'" alt="rubix2.png"></td>
+              <td>rubix2.png</td>
+              <td>49</td>
+              <td class="stat-percentage">3.97%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3cbaf842a1da6566683606e0a833cde16a98bd338d212a25dbbd4cb99d2d751fi0" class="trait-image" onerror="this.style.display='none'" alt="table.png"></td>
+              <td>table.png</td>
+              <td>42</td>
+              <td class="stat-percentage">3.40%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/e8440f154bcdc61131604fd4ded679c6e82be3cfe2cb459def87d4d668410ea8i0" class="trait-image" onerror="this.style.display='none'" alt="LELTRIX.gif"></td>
+              <td>LELTRIX.gif</td>
+              <td>40</td>
+              <td class="stat-percentage">3.24%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ab22d0432e9a2e261e23465876c66e816b218d7c211e6cab4dfb90e7f7377504i0" class="trait-image" onerror="this.style.display='none'" alt="fire.png"></td>
+              <td>fire.png</td>
+              <td>36</td>
+              <td class="stat-percentage">2.92%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/5465b4ac3d4d64cfe948c0e1169f759871b4dd0bb6a86a6e3d80a4ec3f45703fi0" class="trait-image" onerror="this.style.display='none'" alt="bassamp.png"></td>
+              <td>bassamp.png</td>
+              <td>36</td>
+              <td class="stat-percentage">2.92%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/a89adc9a59301325cad31bea181191ad963210a9f8274dd22e5009d7c536d0a5i0" class="trait-image" onerror="this.style.display='none'" alt="boobot.png"></td>
+              <td>boobot.png</td>
+              <td>36</td>
+              <td class="stat-percentage">2.92%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/216a50922662cf33e0c8a41ea4ae65d382000f4e068765a5d6205facf722dfd0i0" class="trait-image" onerror="this.style.display='none'" alt="KNIGHT.png"></td>
+              <td>KNIGHT.png</td>
+              <td>35</td>
+              <td class="stat-percentage">2.84%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/98f571f8b5322e51c2977c18572b9e5f77b91d5b6c4754394480dc02def57fdfi0" class="trait-image" onerror="this.style.display='none'" alt="btc.png"></td>
+              <td>btc.png</td>
+              <td>35</td>
+              <td class="stat-percentage">2.84%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/338761ffb92a1da5e560bafbc07a21b18515646f6d0ebce6132e19354d2da638i0" class="trait-image" onerror="this.style.display='none'" alt="bee.png"></td>
+              <td>bee.png</td>
+              <td>35</td>
+              <td class="stat-percentage">2.84%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/2649887eecee2973f7949b116a6e2a8975f4539eff282d762194a93c7f330970i0" class="trait-image" onerror="this.style.display='none'" alt="PIANO.gif"></td>
+              <td>PIANO.gif</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/7bab03fd0f7114fe3e6bd31eca8e1d054c605ed7407039743067beb4158e1643i0" class="trait-image" onerror="this.style.display='none'" alt="metal.png"></td>
+              <td>metal.png</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/92ceca3fdcd25033952b41a782bf62d94cb594b80575f30c74a1bf7530f2842bi0" class="trait-image" onerror="this.style.display='none'" alt="bin.png"></td>
+              <td>bin.png</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d120f596836ae14d5164cdd85648332c1dfb8c9045ea9eb65c4d9b90f8ef170di0" class="trait-image" onerror="this.style.display='none'" alt="DRUMMER.png"></td>
+              <td>DRUMMER.png</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/f9488d2939e608f2d3ef56fbbb9efc0463805ee262aca974ad69ddc66c5984e8i0" class="trait-image" onerror="this.style.display='none'" alt="badgerbod.png"></td>
+              <td>badgerbod.png</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/bbb631ac6df5bbf96a15f2b8e15d1b4ca5093129cb08f3d37d5f3dae5fbb7926i0" class="trait-image" onerror="this.style.display='none'" alt="cock.png"></td>
+              <td>cock.png</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/5e30bcd9ea20824b6251c5886a4fc78993cb5212ee1e14341593e939ecad6853i0" class="trait-image" onerror="this.style.display='none'" alt="GLITCHRAVE.gif"></td>
+              <td>GLITCHRAVE.gif</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/bc45c2b46d5785b0bf55d8bf00aa838b33afc3d28a125a8457be622e24c10086i0" class="trait-image" onerror="this.style.display='none'" alt="coffee.png"></td>
+              <td>coffee.png</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/dee8a4fdaada420993a0ec7b9dfd5512e2075282a7fb565d9475969f5c77871di0" class="trait-image" onerror="this.style.display='none'" alt="leg0.png"></td>
+              <td>leg0.png</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/859795e7516a4a51928cadbe86e83243c62a7455e91b5b19c084de091c305470i0" class="trait-image" onerror="this.style.display='none'" alt="wizard gown.png"></td>
+              <td>wizard gown.png</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/bc410ffadf531593c14cdfbe9d3ce48b853e856e626a876fe26745731a9aa94ei0" class="trait-image" onerror="this.style.display='none'" alt="CHIMNEY.png"></td>
+              <td>CHIMNEY.png</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/40fbac0794a37005cfdb50032f3a8084c3c54980b0b899aa5a7496cf455beda4i0" class="trait-image" onerror="this.style.display='none'" alt="boxer2.png"></td>
+              <td>boxer2.png</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/8f4d77b35c47d2ca00858ee6be8ade729e305a22203a1b63ae4cf7290f375044i0" class="trait-image" onerror="this.style.display='none'" alt="pool.png"></td>
+              <td>pool.png</td>
+              <td>32</td>
+              <td class="stat-percentage">2.59%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/7c0e97327bc6221a5293e1a8484eda697165498336dde9a28b3a532319ea4b1fi0" class="trait-image" onerror="this.style.display='none'" alt="fucoff.png"></td>
+              <td>fucoff.png</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ede69ad201ce4138d58e1b1569de39c8dacc1d76b1ad9239ebd8a69178e45e96i0" class="trait-image" onerror="this.style.display='none'" alt="pupnode.png"></td>
+              <td>pupnode.png</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/2b92c585f457da1656c7ba34ee26d6066e0b86a401e8b6a34c41b98ef4158953i0" class="trait-image" onerror="this.style.display='none'" alt="CLOUD.png"></td>
+              <td>CLOUD.png</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/9cb72d42b76ced65d7f7b28caedfe227775744999197e848d9077b52464d7c82i0" class="trait-image" onerror="this.style.display='none'" alt="APARTMENT.gif"></td>
+              <td>APARTMENT.gif</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/26231168575ae88354b3d906e812b57eb7614dc953575f957a724af2a578e2f8i0" class="trait-image" onerror="this.style.display='none'" alt="laundry.png"></td>
+              <td>laundry.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/43b4a6de9572c98873f2d6b8da6d45cb085d876f053880d5eeb557413d7c9618i0" class="trait-image" onerror="this.style.display='none'" alt="nwa.png"></td>
+              <td>nwa.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/4e669c1a1c3044c35c2785b09ac9d84bf19992c317c0185677c7ef594219309di0" class="trait-image" onerror="this.style.display='none'" alt="inri.png"></td>
+              <td>inri.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/8e21965d0a9c53e3cb859e0ed2093a0690106221417b4047e744516297f5f836i0" class="trait-image" onerror="this.style.display='none'" alt="briish racing green.png"></td>
+              <td>briish racing green.png</td>
+              <td>29</td>
+              <td class="stat-percentage">2.35%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/e523218d5032cec64e0125b05c80af4eea35e7f394303b34fdda088414e00fffi0" class="trait-image" onerror="this.style.display='none'" alt="boxer.png"></td>
+              <td>boxer.png</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3d34cc61f15b16bdd199f46a9d5c769e8ed100082510258c0cf030c8742d79e4i0" class="trait-image" onerror="this.style.display='none'" alt="space.png"></td>
+              <td>space.png</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/8c57b63188e64070fbb944bd98334bc1ad0aefee1f2f77df527cb6ba465d4b51i0" class="trait-image" onerror="this.style.display='none'" alt="tree.png"></td>
+              <td>tree.png</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/063c1f1c1a11a423bf6c8e90b826d069a79619cffff878c1f6c02e6e56d9edf2i0" class="trait-image" onerror="this.style.display='none'" alt="MONKEY.gif"></td>
+              <td>MONKEY.gif</td>
+              <td>27</td>
+              <td class="stat-percentage">2.19%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/e8538c3a930ad6fb8e1f58196cac17893e7038e0fb8f69415ad5d58ef18501bci0" class="trait-image" onerror="this.style.display='none'" alt="0.png"></td>
+              <td>0.png</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/606b62844e532cb18b277b0a35155b17f7ab5c8af364e289cd7c1b815558f422i0" class="trait-image" onerror="this.style.display='none'" alt="fat4R.png"></td>
+              <td>fat4R.png</td>
+              <td>22</td>
+              <td class="stat-percentage">1.78%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/885e1f6bc140241e9a8f7cdb420658e383723ea670ab005788e60bf266efc236i0" class="trait-image" onerror="this.style.display='none'" alt="C.png"></td>
+              <td>C.png</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ff08f7373d95bc8fa49cd69f37b05badc98f1f5d45c06dd27385b94473083ac3i0" class="trait-image" onerror="this.style.display='none'" alt="A.png"></td>
+              <td>A.png</td>
+              <td>13</td>
+              <td class="stat-percentage">1.05%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/eda5965eeffa374df3cd2794d70fd50037459a2fe443c15a2efa45d9ab2b6bddi0" class="trait-image" onerror="this.style.display='none'" alt="S.png"></td>
+              <td>S.png</td>
+              <td>10</td>
+              <td class="stat-percentage">0.81%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/c343768c4fd0207798ee468ace692f4f2f559d77a79868bb1a57c6add5cff89fi0" class="trait-image" onerror="this.style.display='none'" alt="U.png"></td>
+              <td>U.png</td>
+              <td>10</td>
+              <td class="stat-percentage">0.81%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/4b34d73208a8eb4f4a8ce565ff5a662508fbc1bfd3ec49c74406db825d73a19ci0" class="trait-image" onerror="this.style.display='none'" alt="T.png"></td>
+              <td>T.png</td>
+              <td>6</td>
+              <td class="stat-percentage">0.49%</td>
+            </tr>
+        </table>
+      </div>
+      
+      <div class="stat-box">
+        <h3>Heads</h3>
+        <table>
+          <tr><th>Image</th><th>Name</th><th>Count</th><th>Percentage</th></tr>
+          <tr>
+              <td><img src="https://ordinals.com/content/009be454e746e3d9d72fd4097ecaa1bf9ec0a8a2a1ddc06637406d0e7f0037cai0" class="trait-image" onerror="this.style.display='none'" alt="Cgrey R.png"></td>
+              <td>Cgrey R.png</td>
+              <td>42</td>
+              <td class="stat-percentage">3.40%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/27d22eff6c84947b5cd64ac97b44c84441d0133886d90988005ddcc51c8f0137i0" class="trait-image" onerror="this.style.display='none'" alt="exclaim L.png"></td>
+              <td>exclaim L.png</td>
+              <td>42</td>
+              <td class="stat-percentage">3.40%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/aff64eb637277818ace3b179617e8da177fc69a634211b44c447f7c175fed699i0" class="trait-image" onerror="this.style.display='none'" alt="FLATEARTH R.png"></td>
+              <td>FLATEARTH R.png</td>
+              <td>40</td>
+              <td class="stat-percentage">3.24%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ac3e4bbcc1ce47bd7adf593d95e58ef58bc8e0ff8f6a7b1fe23f5cb502647069i0" class="trait-image" onerror="this.style.display='none'" alt="badger L.png"></td>
+              <td>badger L.png</td>
+              <td>40</td>
+              <td class="stat-percentage">3.24%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/88aacd121ed9c842310a191b73860bb5609f5cd04f29ea31a9a1ccc53da050c2i0" class="trait-image" onerror="this.style.display='none'" alt="headC green L.png"></td>
+              <td>headC green L.png</td>
+              <td>39</td>
+              <td class="stat-percentage">3.16%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/cd871be13e3dfdfc7b698b23bfbd8296689b8a6d763d3b9c2277515d26b75cf4i0" class="trait-image" onerror="this.style.display='none'" alt="sqr8 L.png"></td>
+              <td>sqr8 L.png</td>
+              <td>35</td>
+              <td class="stat-percentage">2.84%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/f9da19a7818f9508e1e678f5581909357c82f13e909096ecca062eafc40873abi0" class="trait-image" onerror="this.style.display='none'" alt="sqr5 L.png"></td>
+              <td>sqr5 L.png</td>
+              <td>35</td>
+              <td class="stat-percentage">2.84%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/409de7bf8ca4d83dd33799ab6d11d1d2a1422f57ca72a55ef23b03781812239ei0" class="trait-image" onerror="this.style.display='none'" alt="shroom L.png"></td>
+              <td>shroom L.png</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/350cad7ac5432127d0ee74970d39d2b531db924c7eb785d8c852ee2e96b5f986i0" class="trait-image" onerror="this.style.display='none'" alt="record player L.png"></td>
+              <td>record player L.png</td>
+              <td>34</td>
+              <td class="stat-percentage">2.76%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/e48f2e3df9ca22da06a74dee4642a7100eb5af5f3cb21f87e493a13ca58ac7d7i0" class="trait-image" onerror="this.style.display='none'" alt="headC play L.png"></td>
+              <td>headC play L.png</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/2bc2668a512b75fce0a106bc0a9989cfb27545b01a637a6ca7c3ecb6c954d0d2i0" class="trait-image" onerror="this.style.display='none'" alt="Cblack R.png"></td>
+              <td>Cblack R.png</td>
+              <td>33</td>
+              <td class="stat-percentage">2.67%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/cb80c2caa4b286a6b5994bfd2e0cb14c92f0002fc84ac7d02141287732ffeef7i0" class="trait-image" onerror="this.style.display='none'" alt="sqr4 R.png"></td>
+              <td>sqr4 R.png</td>
+              <td>32</td>
+              <td class="stat-percentage">2.59%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/88b8ea7cef9c887c185f2fd974e41a6ff458541463596aa600bd98d4efe614cdi0" class="trait-image" onerror="this.style.display='none'" alt="zombi L.png"></td>
+              <td>zombi L.png</td>
+              <td>32</td>
+              <td class="stat-percentage">2.59%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/19d6a0469535b21cbb5bd418bad6e7a668b7d7e68f3f9c9217eadbce65c75e2bi0" class="trait-image" onerror="this.style.display='none'" alt="Cyellow R.png"></td>
+              <td>Cyellow R.png</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ccd8393d3efab6667f9675d6b2a664c090f70d09cbbbe0d6276defc101874496i0" class="trait-image" onerror="this.style.display='none'" alt="Cclassic R.png"></td>
+              <td>Cclassic R.png</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/7c768f9beee65e47fb4fddcb757a0cf85d2312114d5ada27c19c35ee5f86e46di0" class="trait-image" onerror="this.style.display='none'" alt="sqr3 R.png"></td>
+              <td>sqr3 R.png</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/9835da672f92ab7e38f20a918046a6524e0ef92d9c090e72e37ce872d3f94234i0" class="trait-image" onerror="this.style.display='none'" alt="sqr7 L.png"></td>
+              <td>sqr7 L.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/e0b400f7487ee9af8518c6142070d91ab23e951180772101e6000d27428b83ddi0" class="trait-image" onerror="this.style.display='none'" alt="tree L.png"></td>
+              <td>tree L.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/54e8a3daa0ee2a988a955360374aa464a299a642ab545a946a58c5484f94283bi0" class="trait-image" onerror="this.style.display='none'" alt="dog R.png"></td>
+              <td>dog R.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/5d38406c4f8642c03691dcc224e32f6e554f393b009c8104480d1f72b19f1a49i0" class="trait-image" onerror="this.style.display='none'" alt="Puppet R.png"></td>
+              <td>Puppet R.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/828d0811d9d03b594e4dd6c9093501ef64fea132abbbc105b936925d0d46f7f9i0" class="trait-image" onerror="this.style.display='none'" alt="question R.png"></td>
+              <td>question R.png</td>
+              <td>29</td>
+              <td class="stat-percentage">2.35%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/cef3b9062bf28ca43e832d350437e178a9dec17657f49b21be8eb2a8f7d36397i0" class="trait-image" onerror="this.style.display='none'" alt="sqr1 R.png"></td>
+              <td>sqr1 R.png</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/8206706911c7b3227671801b534f6686c54d78e49c370ac5435cb8b1cda32140i0" class="trait-image" onerror="this.style.display='none'" alt="skull R.png"></td>
+              <td>skull R.png</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/174efb0ba80fda2c0cea9c6e846e4b837500f941164caf647d5b09c7e6a4e01ci0" class="trait-image" onerror="this.style.display='none'" alt="TOASTER R.gif"></td>
+              <td>TOASTER R.gif</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/7f74490d55f4859212d34336af764a0aff846d136329d97eddb30cf53b7281b0i0" class="trait-image" onerror="this.style.display='none'" alt="GLITCH R.png"></td>
+              <td>GLITCH R.png</td>
+              <td>27</td>
+              <td class="stat-percentage">2.19%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/201fe8c5203a4d8cfda655d03d0b30b5cae95556ace238bacbcaa89fc2b30de2i0" class="trait-image" onerror="this.style.display='none'" alt="sqr5 R.png"></td>
+              <td>sqr5 R.png</td>
+              <td>26</td>
+              <td class="stat-percentage">2.11%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d00331e3c0bb4cfa930e10afaf44abd8ec0f9f0de1a655f950e1df82539ee671i0" class="trait-image" onerror="this.style.display='none'" alt="KNIGHT L.png"></td>
+              <td>KNIGHT L.png</td>
+              <td>26</td>
+              <td class="stat-percentage">2.11%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/4954f6cfbcfa725bc654ac37636265368eb14647ea29017441b4d41dc2663925i0" class="trait-image" onerror="this.style.display='none'" alt="headC blue L.png"></td>
+              <td>headC blue L.png</td>
+              <td>26</td>
+              <td class="stat-percentage">2.11%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/346f518a15e416c03655bd104a9fb3061d518d8f3eb3714a038b493025bd05a6i0" class="trait-image" onerror="this.style.display='none'" alt="half L.png"></td>
+              <td>half L.png</td>
+              <td>25</td>
+              <td class="stat-percentage">2.03%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/7dbf31ed1b854757dbf7cad0684fcbd59fcbece2acc491e387438615b56de821i0" class="trait-image" onerror="this.style.display='none'" alt="C-up L.png"></td>
+              <td>C-up L.png</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/45a615c9fb54a2bf76831519a94d290aab50685230c25079b4853df537dc0407i0" class="trait-image" onerror="this.style.display='none'" alt="BIOCUBE R.gif"></td>
+              <td>BIOCUBE R.gif</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/e53394d925192cf27c290b49919668489639fdddf0be1792e4a66f12711c5db6i0" class="trait-image" onerror="this.style.display='none'" alt="Cred R.png"></td>
+              <td>Cred R.png</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/a44f2566c5d06cc89c5906b62766bf89cad039e82502357a37f515598b33d3f6i0" class="trait-image" onerror="this.style.display='none'" alt="steve2 L.png"></td>
+              <td>steve2 L.png</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ec8b7c24fa8c1e0ab5f729e00ac0b3096da33821ba52a93ccb0fab6d095ad05di0" class="trait-image" onerror="this.style.display='none'" alt="sqr2 R.png"></td>
+              <td>sqr2 R.png</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/1b6207e82071be3fc4e2f79fd6cdab9c56810d0a21f1a2c9e6f903d50fb6f1e1i0" class="trait-image" onerror="this.style.display='none'" alt="monitor R.png"></td>
+              <td>monitor R.png</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ac89b7b90f0d872971e3d12732b75848a9821c175b5736cf57cac49e18817b78i0" class="trait-image" onerror="this.style.display='none'" alt="sock R.png"></td>
+              <td>sock R.png</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/63a98641d0e959b333178009758e3aa3408dbb06ef09ac45ba5f06668fdc17b9i0" class="trait-image" onerror="this.style.display='none'" alt="project R.png"></td>
+              <td>project R.png</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ccc7794c2b27f152e88e2ed05b807150f120d258340ec27a64b4738a8b0468c8i0" class="trait-image" onerror="this.style.display='none'" alt="bee R.png"></td>
+              <td>bee R.png</td>
+              <td>22</td>
+              <td class="stat-percentage">1.78%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/0238d56d630bf2c4ed6d5bfb50f3c8c617217cbe62206fa1678f92f2cc7bcfa8i0" class="trait-image" onerror="this.style.display='none'" alt="deal0re L.png"></td>
+              <td>deal0re L.png</td>
+              <td>21</td>
+              <td class="stat-percentage">1.70%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/b4b96e092d686aaaea970b3f43b0a7650cabda12948390a4ed3a17aa0d07803ai0" class="trait-image" onerror="this.style.display='none'" alt="steve1 R.png"></td>
+              <td>steve1 R.png</td>
+              <td>21</td>
+              <td class="stat-percentage">1.70%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/c2ff6a2514d18478f2a79a9845c5c03e6b8dcd5e13633090676593a9726bef22i0" class="trait-image" onerror="this.style.display='none'" alt="headC skin L.png"></td>
+              <td>headC skin L.png</td>
+              <td>20</td>
+              <td class="stat-percentage">1.62%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/57516adbc60bbb67ddac901588b5694cdfa6b529971fd612ff98221bc9de648bi0" class="trait-image" onerror="this.style.display='none'" alt="wizard R.png"></td>
+              <td>wizard R.png</td>
+              <td>18</td>
+              <td class="stat-percentage">1.46%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/94d7a69be7d36fac83c74a7ed8b81a99de48819a2bd5ed497a70b01a99ca82e1i0" class="trait-image" onerror="this.style.display='none'" alt="companion L.png"></td>
+              <td>companion L.png</td>
+              <td>16</td>
+              <td class="stat-percentage">1.30%</td>
+            </tr>
+        </table>
+      </div>
+      
+      <div class="stat-box">
+        <h3>Faces</h3>
+        <table>
+          <tr><th>Image</th><th>Name</th><th>Count</th><th>Percentage</th></tr>
+          <tr>
+              <td><img src="https://ordinals.com/content/effadfc7b736fc055a12bb162cf676a58011e9a57b6aed2eb26248b98a4a9e11i0" class="trait-image" onerror="this.style.display='none'" alt="face9 R.png"></td>
+              <td>face9 R.png</td>
+              <td>31</td>
+              <td class="stat-percentage">2.51%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/04c45a7ac37056bbc114f691e409f2657fa875eb7ed4ca12da77a136ed8660f2i0" class="trait-image" onerror="this.style.display='none'" alt="face29 R.png"></td>
+              <td>face29 R.png</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/a0fe7a095f0e31c7d407a675e33602b9ef5de811ff62dc8f00f2e50f74a5cb35i0" class="trait-image" onerror="this.style.display='none'" alt="DUCK L.gif"></td>
+              <td>DUCK L.gif</td>
+              <td>30</td>
+              <td class="stat-percentage">2.43%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/a505cfdbbcee277eb7a4bb025fd4c08bee3120f907a1fed28df4b5fbdbb28c37i0" class="trait-image" onerror="this.style.display='none'" alt="face21b R.png"></td>
+              <td>face21b R.png</td>
+              <td>29</td>
+              <td class="stat-percentage">2.35%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/059eef310d113e006577af8625f112cf8a3474d1b55bff7052b8541b4d41676ei0" class="trait-image" onerror="this.style.display='none'" alt="face8 R.png"></td>
+              <td>face8 R.png</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/b647d9284e4d35d0dc011cf4ae2585a697116cd2c1a99044fa6aea6bffb18772i0" class="trait-image" onerror="this.style.display='none'" alt="face30 R.png"></td>
+              <td>face30 R.png</td>
+              <td>28</td>
+              <td class="stat-percentage">2.27%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/26673169383d7cf7a908539116d6ddbf8dfbf801f809dada096d4129144b23e8i0" class="trait-image" onerror="this.style.display='none'" alt="face4 R.png"></td>
+              <td>face4 R.png</td>
+              <td>27</td>
+              <td class="stat-percentage">2.19%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/4857ada5dd6ab6c6d675f59ab6808ddb4cdf9fbd7ae8f143ae30c6b1cfa58a05i0" class="trait-image" onerror="this.style.display='none'" alt="face4 L.png"></td>
+              <td>face4 L.png</td>
+              <td>25</td>
+              <td class="stat-percentage">2.03%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/4fead7d5c1a0da5b48c239fb76cd467cff16a6ba0887ba853115d60648061158i0" class="trait-image" onerror="this.style.display='none'" alt="face24 L.png"></td>
+              <td>face24 L.png</td>
+              <td>25</td>
+              <td class="stat-percentage">2.03%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/485a4c187769e52a7d2326854221452feaa1be2db23e36a86ab0ecd31fcb013bi0" class="trait-image" onerror="this.style.display='none'" alt="face27 R.png"></td>
+              <td>face27 R.png</td>
+              <td>25</td>
+              <td class="stat-percentage">2.03%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3a9998a92f60838a00f9ffc58fad6dd7c3b3ede07bf229caddc215cfc17ed655i0" class="trait-image" onerror="this.style.display='none'" alt="face6 L.png"></td>
+              <td>face6 L.png</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/4e8ad9591ab23b682c661fe16508410e42bfb7fde4fe4665336672003f8e334fi0" class="trait-image" onerror="this.style.display='none'" alt="face24 R.png"></td>
+              <td>face24 R.png</td>
+              <td>24</td>
+              <td class="stat-percentage">1.94%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/8de796bd3722dd87e3a0bffe23175e1ab3c5b51962b7344c4092a6db6bbe6983i0" class="trait-image" onerror="this.style.display='none'" alt="face5 R.png"></td>
+              <td>face5 R.png</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/97de6f7b4f3d7f8812ce904bff72e1a64ae44f9c89a1f576a862c9d8052fc2cbi0" class="trait-image" onerror="this.style.display='none'" alt="face17 R.png"></td>
+              <td>face17 R.png</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/17a705da56c2793c0ec245956f65422ca528e09d4300d427182e155b0b813baei0" class="trait-image" onerror="this.style.display='none'" alt="face10 R.png"></td>
+              <td>face10 R.png</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/a673a019e7238f25990df4cdbbb5437b057a001e99564c0334e1be9ecedaba2di0" class="trait-image" onerror="this.style.display='none'" alt="GNASH L.gif"></td>
+              <td>GNASH L.gif</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/b536bc4197072cba14262b694ab7cafa1407473d2292d4ab5f205829936df1dfi0" class="trait-image" onerror="this.style.display='none'" alt="face3 R.png"></td>
+              <td>face3 R.png</td>
+              <td>23</td>
+              <td class="stat-percentage">1.86%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/08fd25426c616de0d25af10fba0d01c398b260650957b29314a72112a116f6e3i0" class="trait-image" onerror="this.style.display='none'" alt="node R.png"></td>
+              <td>node R.png</td>
+              <td>22</td>
+              <td class="stat-percentage">1.78%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d4f3cccad957e0386b7dd838309ea7735df275772460ffa610228871b0f3f570i0" class="trait-image" onerror="this.style.display='none'" alt="face25 R.png"></td>
+              <td>face25 R.png</td>
+              <td>22</td>
+              <td class="stat-percentage">1.78%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/a1ccaf73ca18d4cd237f0f49ac1933cb2e2a637c5988010cbe0f035d13e79b2bi0" class="trait-image" onerror="this.style.display='none'" alt="face22 L.png"></td>
+              <td>face22 L.png</td>
+              <td>21</td>
+              <td class="stat-percentage">1.70%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3498218ad0d8c64d89a1036be0ccb4a6f874c969c5ce6a7bd6ae3e114454bc4di0" class="trait-image" onerror="this.style.display='none'" alt="MOG R.png"></td>
+              <td>MOG R.png</td>
+              <td>20</td>
+              <td class="stat-percentage">1.62%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/6df6abc2d719240859eee88fd7ee414db3908f1bd0e688c1a06136447b20e0d9i0" class="trait-image" onerror="this.style.display='none'" alt="face21 L.png"></td>
+              <td>face21 L.png</td>
+              <td>20</td>
+              <td class="stat-percentage">1.62%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/9127d51ebc9b2e6d110146c4eeb699397c7b9f58825e9db38f5cfbd12e2b970fi0" class="trait-image" onerror="this.style.display='none'" alt="MOG L.png"></td>
+              <td>MOG L.png</td>
+              <td>20</td>
+              <td class="stat-percentage">1.62%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3f0a22f1fa9343093b1308c20c175eea61e6ad1cd26412b82317051ed1075290i0" class="trait-image" onerror="this.style.display='none'" alt="face18 R.png"></td>
+              <td>face18 R.png</td>
+              <td>20</td>
+              <td class="stat-percentage">1.62%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/7dd540feda99f2a5e6a86e328141cb47e83913d08aa603b713970592b3f3ca44i0" class="trait-image" onerror="this.style.display='none'" alt="CUTE L.gif"></td>
+              <td>CUTE L.gif</td>
+              <td>20</td>
+              <td class="stat-percentage">1.62%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d491ea59f2f4f59a7fef5dd4b7be7296bff9b264d8b6d0fec5f533ec11f0feb1i0" class="trait-image" onerror="this.style.display='none'" alt="face26 L.png"></td>
+              <td>face26 L.png</td>
+              <td>20</td>
+              <td class="stat-percentage">1.62%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3496418a2de5bcbf6193b2d292edf2154abac382b79536befd01baa94a2aa8ffi0" class="trait-image" onerror="this.style.display='none'" alt="face27 L.png"></td>
+              <td>face27 L.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/688bd4f6f19f6ff82ec95683c20a7bd0bd1a9180f61719a288459a95190d8c1ei0" class="trait-image" onerror="this.style.display='none'" alt="PUP R.gif"></td>
+              <td>PUP R.gif</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/6a333445263968af2277cb4470698b30962a0f44477d9f0130b9df72600b023ei0" class="trait-image" onerror="this.style.display='none'" alt="face13 R.png"></td>
+              <td>face13 R.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/eb2893573015d2bea4fe94cb3fad561abb5cf9250667853a47e4c2e646c946ddi0" class="trait-image" onerror="this.style.display='none'" alt="face19 L.png"></td>
+              <td>face19 L.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/f6747fb97549587ab74f2f27f05a80374c1132afe1c13b7b0a063d140b543491i0" class="trait-image" onerror="this.style.display='none'" alt="face1 L.png"></td>
+              <td>face1 L.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/8ef51b9a6537a6220a4ab51ea69993de9c2f7c30f44b7eb22207fdfd1f71bc70i0" class="trait-image" onerror="this.style.display='none'" alt="GAY R.gif"></td>
+              <td>GAY R.gif</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/7d1d53df17174a8ba07322ce6d111cd513020ed42ebadc7924c12f7830bff3d8i0" class="trait-image" onerror="this.style.display='none'" alt="face19 R.png"></td>
+              <td>face19 R.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/5b8c5e074e51c9c136b02902fc563ac40fdb6cbcb0e1b627c6fe86898f74fee6i0" class="trait-image" onerror="this.style.display='none'" alt="face17 L.png"></td>
+              <td>face17 L.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/99dd10280be54c5d48c74312c2bf67d9668e8f51265218b138fc477be34c0ef7i0" class="trait-image" onerror="this.style.display='none'" alt="face20 R.png"></td>
+              <td>face20 R.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/dae3193702663652af9f85a4c74ae85a6753c01d7fd10efc5068b66ccf14ba19i0" class="trait-image" onerror="this.style.display='none'" alt="node L.png"></td>
+              <td>node L.png</td>
+              <td>19</td>
+              <td class="stat-percentage">1.54%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d6c2df73ae1a375387a1252b56ea0e5005a362f88fdd3706ddc2f6629c4dc5f2i0" class="trait-image" onerror="this.style.display='none'" alt="face7 L.png"></td>
+              <td>face7 L.png</td>
+              <td>18</td>
+              <td class="stat-percentage">1.46%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/dcd0f22d6e05fce4e0c8b415a302e32b046f171d9279a7eb57700cf2ba2b04f6i0" class="trait-image" onerror="this.style.display='none'" alt="face6 R.png"></td>
+              <td>face6 R.png</td>
+              <td>18</td>
+              <td class="stat-percentage">1.46%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/00d8cfb4dcc61b928c2b8a12c312194c80f73ac13a731f8badf76de37f190cfai0" class="trait-image" onerror="this.style.display='none'" alt="face12 R.png"></td>
+              <td>face12 R.png</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/da4152a9a6034cf9bcc3884ebde3276a624031dc83a11762cb7cc2801221bee8i0" class="trait-image" onerror="this.style.display='none'" alt="face11 R.png"></td>
+              <td>face11 R.png</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d51a9c2bc2671f105c1752419a376cb8cd52f5e4c7b97028d7fcca6208264410i0" class="trait-image" onerror="this.style.display='none'" alt="face25 L.png"></td>
+              <td>face25 L.png</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/28e7417cee048e34f0087c7d5a37a42b4ba013cebe77abd5a8019a441510673ei0" class="trait-image" onerror="this.style.display='none'" alt="face7 R.png"></td>
+              <td>face7 R.png</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/a47706d02dadf342c7dbf57dc89a0dea099098240d5b49242e1bfef0a9723542i0" class="trait-image" onerror="this.style.display='none'" alt="face13 L.png"></td>
+              <td>face13 L.png</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/2a57c3e2675e1aade8fb6a054dcd795736c39fdf8e5c3cb7ca5f3bd3d2927a55i0" class="trait-image" onerror="this.style.display='none'" alt="face11 L.png"></td>
+              <td>face11 L.png</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ad80151f5c7d0c44fc4240acab3438bd37eb5e1e8be0c43b0a37912f01d29c77i0" class="trait-image" onerror="this.style.display='none'" alt="ROBOT L.gif"></td>
+              <td>ROBOT L.gif</td>
+              <td>17</td>
+              <td class="stat-percentage">1.38%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/96127194feeeda8f32e23e57caeb5429a8a89561eb843bb95115ec470c564382i0" class="trait-image" onerror="this.style.display='none'" alt="face12 L.png"></td>
+              <td>face12 L.png</td>
+              <td>16</td>
+              <td class="stat-percentage">1.30%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/2263845d738e9efc6b9fbd3c4dcdc938468744ced904905c5c1d71a2917b318di0" class="trait-image" onerror="this.style.display='none'" alt="face3 L.png"></td>
+              <td>face3 L.png</td>
+              <td>16</td>
+              <td class="stat-percentage">1.30%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/680edecf480fb8dc0c5a07c81ced556a69439fb80678c3ffc973a226c774b8dai0" class="trait-image" onerror="this.style.display='none'" alt="face20 L.png"></td>
+              <td>face20 L.png</td>
+              <td>16</td>
+              <td class="stat-percentage">1.30%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/8df69fab60c83aa1c2f0659d0a7074241b9cfcc2c6b54dc426db7209b7160cc2i0" class="trait-image" onerror="this.style.display='none'" alt="face1 R.png"></td>
+              <td>face1 R.png</td>
+              <td>16</td>
+              <td class="stat-percentage">1.30%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/ba842b70219a79fdcc07152dd1af637e09ad6b21c429d54d3a88a3233fb3bcf8i0" class="trait-image" onerror="this.style.display='none'" alt="face10 L.png"></td>
+              <td>face10 L.png</td>
+              <td>16</td>
+              <td class="stat-percentage">1.30%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/155423b672b6a9f138b3830b6f0b32ba32ed421b76f846ba66138b4be6fbf862i0" class="trait-image" onerror="this.style.display='none'" alt="face29 L.png"></td>
+              <td>face29 L.png</td>
+              <td>15</td>
+              <td class="stat-percentage">1.22%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/939bd542667a0220268f571a61ed7cca7e76f2df03ee1668035aa23a783e22ddi0" class="trait-image" onerror="this.style.display='none'" alt="face22 R.png"></td>
+              <td>face22 R.png</td>
+              <td>15</td>
+              <td class="stat-percentage">1.22%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/52aa00ad7f0aac22fd5b3b59dd75edce77fb2f290bf798d16175f2b4c4b63451i0" class="trait-image" onerror="this.style.display='none'" alt="ROBOT R.gif"></td>
+              <td>ROBOT R.gif</td>
+              <td>15</td>
+              <td class="stat-percentage">1.22%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/053b9dc62529e1c2f7bf681f544a274aa1eac5b200e292da70ef7bfa986f6cffi0" class="trait-image" onerror="this.style.display='none'" alt="face2 R.png"></td>
+              <td>face2 R.png</td>
+              <td>15</td>
+              <td class="stat-percentage">1.22%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/f728a622f74314f7fe6dd0ad067c01247bbc22b2c98c722d7b54a3477aef9f6ei0" class="trait-image" onerror="this.style.display='none'" alt="face8 L.png"></td>
+              <td>face8 L.png</td>
+              <td>15</td>
+              <td class="stat-percentage">1.22%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/81d13a32b4e7e04463e14ad8a801376ec7c21f78a2010ec1db71eb383fed761bi0" class="trait-image" onerror="this.style.display='none'" alt="face2 L.png"></td>
+              <td>face2 L.png</td>
+              <td>15</td>
+              <td class="stat-percentage">1.22%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/af059962aa26e8b9365d3b957ab0a9c14a75bf19264522dbac8c71cd65590ca0i0" class="trait-image" onerror="this.style.display='none'" alt="face9 L.png"></td>
+              <td>face9 L.png</td>
+              <td>14</td>
+              <td class="stat-percentage">1.13%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/aa9cc52f35148b697490c42c6bd3f07ab03ba87ba4f554fbce1df3f5f61bc955i0" class="trait-image" onerror="this.style.display='none'" alt="face5 L.png"></td>
+              <td>face5 L.png</td>
+              <td>14</td>
+              <td class="stat-percentage">1.13%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/01ddfc6b16cfcba98c4b8c312945b01ec9ef76fcbb186c088e9c86650916b7eai0" class="trait-image" onerror="this.style.display='none'" alt="face26 R.png"></td>
+              <td>face26 R.png</td>
+              <td>14</td>
+              <td class="stat-percentage">1.13%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/89944a8720655f55678d66554ebd8bdf0092b3d224d49e749a91c945c0c0359fi0" class="trait-image" onerror="this.style.display='none'" alt="GNASH R.gif"></td>
+              <td>GNASH R.gif</td>
+              <td>13</td>
+              <td class="stat-percentage">1.05%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/1a23351ceeb7ce8defb10cb042c966a2eb22c131c8fa6e540d16c0b0fac5e050i0" class="trait-image" onerror="this.style.display='none'" alt="face18 L.png"></td>
+              <td>face18 L.png</td>
+              <td>12</td>
+              <td class="stat-percentage">0.97%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/9dc9cf20548952f2ecae5cd25703e0cbe6c24980d51d8c0db676c0f5b2f8ca68i0" class="trait-image" onerror="this.style.display='none'" alt="CUTE R.gif"></td>
+              <td>CUTE R.gif</td>
+              <td>10</td>
+              <td class="stat-percentage">0.81%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/f595a79e595b543f90d3b79ee54bbde0b18cbddec9b39db532ec8e95c97d5e1fi0" class="trait-image" onerror="this.style.display='none'" alt="face28 C.png"></td>
+              <td>face28 C.png</td>
+              <td>6</td>
+              <td class="rarity-legendary">0.49%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/3077e9f39c8b259a3836325320db8f70005fa6d251059f54d7160e1d129e7429i0" class="trait-image" onerror="this.style.display='none'" alt="face14 C.png"></td>
+              <td>face14 C.png</td>
+              <td>5</td>
+              <td class="rarity-legendary">0.41%</td>
+            </tr><tr>
+              <td><img src="https://ordinals.com/content/d2e9fbe4fa438a0f145e65057153c52eca5be5e9b5c0bd51f6b15246d063fa11i0" class="trait-image" onerror="this.style.display='none'" alt="PUPHEX C.gif"></td>
+              <td>PUPHEX C.gif</td>
+              <td>5</td>
+              <td class="rarity-legendary">0.41%</td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section">
+    <div class="category-header">
+      <h2>Animation & Sound Distribution</h2>
+    </div>
+    <div class="stats-container">
+      <div class="stat-box">
+        <h3>Animations</h3>
+        <table>
+          <tr><th>Type</th><th>Count</th><th>Percentage</th></tr>
+          
+        </table>
+      </div>
+      
+      <div class="stat-box">
+        <h3>Sound Effects</h3>
+        <table>
+          <tr><th>Genre</th><th>Count</th><th>Percentage</th></tr>
+          
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
